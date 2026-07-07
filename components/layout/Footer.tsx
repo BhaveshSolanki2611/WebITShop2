@@ -31,9 +31,9 @@ export function Footer() {
           <div>
             <Link href="/" className="inline-block mb-4">
               <img
-                src="/images/logo.png"
+                src="https://www.thewebitshop.com/header_files/5028TheWebItShop-Logo.png"
                 alt="The Web IT Shop"
-                className="h-10 sm:h-12 w-auto filter dark:brightness-110 mb-4"
+                className="h-10 w-auto brightness-110"
               />
             </Link>
             <p className="text-sm leading-relaxed mb-6 text-paper-50/80">
