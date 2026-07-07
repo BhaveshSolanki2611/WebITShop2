@@ -156,14 +156,13 @@ body {
 .drafting-grid {
   --grid-color: rgba(18, 22, 31, 0.045);
   --grid-color-major: rgba(18, 22, 31, 0.06);
-  position: relative;
 }
 
 .drafting-grid::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: 0;
+  z-index: -1;
   pointer-events: none;
   background-image:
     /* Major vertical lines (every 80px) */
@@ -198,11 +197,6 @@ body {
       transparent 0.5px,
       transparent 20px
     );
-}
-
-.drafting-grid > * {
-  position: relative;
-  z-index: 1;
 }
 
 /* ============================================================
