@@ -9,74 +9,44 @@ const actions = [
     label: "Call Now",
     href: "tel:+917065740676",
     icon: Phone,
-    bgColor: "#22c55e",
-    hoverColor: "#16a34a",
+    bgColor: "bg-[#22c55e]",
+    hoverColor: "hover:bg-[#16a34a]",
   },
   {
     label: "WhatsApp",
     href: getWhatsAppUrl("Hi! I'm interested in your services."),
     icon: MessageCircle,
-    bgColor: "#25D366",
-    hoverColor: "#1da851",
+    bgColor: "bg-[#25D366]",
+    hoverColor: "hover:bg-[#1da851]",
     external: true,
   },
   {
     label: "Enquiry",
     href: "/contact",
     icon: Mail,
-    bgColor: "#c7952e",
-    hoverColor: "#a87b24",
+    bgColor: "bg-[#c7952e]",
+    hoverColor: "hover:bg-[#a87b24]",
     isLink: true,
   },
 ];
 
 export function FloatingActions() {
   return (
-    <div
-      style={{
-        position: "fixed",
-        bottom: "24px",
-        right: "24px",
-        zIndex: 9990,
-        display: "flex",
-        flexDirection: "column",
-        gap: "12px",
-      }}
-    >
+    <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-[9990] flex flex-col gap-2 md:gap-3">
       {actions.map((action) => {
         const Icon = action.icon;
-        const buttonStyle: React.CSSProperties = {
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          width: "56px",
-          height: "56px",
-          borderRadius: "50%",
-          backgroundColor: action.bgColor,
-          color: "white",
-          boxShadow: "0 4px 15px rgba(0,0,0,0.3)",
-          transition: "transform 0.2s ease, box-shadow 0.2s ease",
-          textDecoration: "none",
-        };
-
+        const className = `flex items-center justify-center w-11 h-11 md:w-14 md:h-14 rounded-full text-white shadow-[0_4px_15px_rgba(0,0,0,0.3)] transition-all duration-200 hover:scale-110 ${action.bgColor} ${action.hoverColor}`;
+        
         if (action.isLink) {
           return (
             <Link
               key={action.label}
               href={action.href}
-              style={buttonStyle}
+              className={className}
               aria-label={action.label}
               title={action.label}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "scale(1.15)";
-                e.currentTarget.style.backgroundColor = action.hoverColor;
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "scale(1)";
-                e.currentTarget.style.backgroundColor = action.bgColor;
-              }}
             >
-              <Icon style={{ width: "24px", height: "24px" }} />
+              <Icon className="w-5 h-5 md:w-6 md:h-6" />
             </Link>
           );
         }
@@ -87,19 +57,11 @@ export function FloatingActions() {
             href={action.href}
             target={action.external ? "_blank" : undefined}
             rel={action.external ? "noopener noreferrer" : undefined}
-            style={buttonStyle}
+            className={className}
             aria-label={action.label}
             title={action.label}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "scale(1.15)";
-              e.currentTarget.style.backgroundColor = action.hoverColor;
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "scale(1)";
-              e.currentTarget.style.backgroundColor = action.bgColor;
-            }}
           >
-            <Icon style={{ width: "24px", height: "24px" }} />
+            <Icon className="w-5 h-5 md:w-6 md:h-6" />
           </a>
         );
       })}

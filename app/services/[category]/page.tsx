@@ -146,14 +146,14 @@ export default async function CategoryPage({
                 </div>
 
                 {/* Contact Card */}
-                <div className="rounded-2xl bg-gradient-to-br from-brass-500 to-brass-600 p-6 text-ink-900">
-                  <h3 className="font-display font-semibold text-lg mb-2">Need Help?</h3>
-                  <p className="text-sm text-ink-900/70 mb-4">
+                <div className="rounded-2xl bg-gradient-to-br from-brass-500 to-brass-600 p-6 shadow-lg">
+                  <h3 className="font-display font-bold text-xl mb-2 text-black">Need Help?</h3>
+                  <p className="text-sm font-medium text-black/80 mb-5">
                     Get in touch with our experts for a free consultation.
                   </p>
                   <a
                     href={`tel:${company.primaryPhone}`}
-                    className="block text-center px-4 py-3 bg-ink-900 text-paper-50 rounded-xl font-semibold text-sm hover:bg-ink-800 transition-colors"
+                    className="block text-center px-4 py-3 bg-black text-white rounded-xl font-semibold text-sm hover:bg-black/80 transition-colors shadow-md"
                   >
                     <span className="font-mono">{company.primaryPhone}</span>
                   </a>

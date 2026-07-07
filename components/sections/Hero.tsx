@@ -2,26 +2,48 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Send } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden py-20 md:py-32">
-      {/* Registration marks */}
-      <div className="registration-mark registration-mark--tl" />
-      <div className="registration-mark registration-mark--tr" />
+    <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-32 min-h-[90vh] flex items-center">
+      {/* Dynamic Background Elements */}
+      <div className="absolute inset-0 -z-20 bg-paper-50 dark:bg-ink-900 transition-colors duration-300" />
+      
+      {/* Drafting grid pattern */}
+      <div className="absolute inset-0 -z-10 opacity-30 dark:opacity-[0.05] drafting-grid mix-blend-multiply dark:mix-blend-lighten" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Glowing Orbs */}
+      <motion.div
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.3, 0.5, 0.3],
+          rotate: [0, 90, 0]
+        }}
+        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+        className="absolute top-1/4 -right-1/4 w-[800px] h-[800px] bg-brass-500/20 rounded-full blur-[120px] -z-10 pointer-events-none"
+      />
+      <motion.div
+        animate={{
+          scale: [1, 1.5, 1],
+          opacity: [0.2, 0.4, 0.2],
+        }}
+        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-0 -left-1/4 w-[600px] h-[600px] bg-cobalt-500/10 rounded-full blur-[100px] -z-10 pointer-events-none"
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
-          <div>
+          <div className="relative z-10 text-center lg:text-left">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="inline-block"
             >
-              <div className="section-title-block text-brass-500 mb-6">
-                <span>Digital Agency — Since 2019</span>
+              <div className="px-4 py-1.5 rounded-full border border-brass-500/30 bg-brass-500/10 text-brass-600 dark:text-brass-400 text-sm font-mono font-medium mb-6 backdrop-blur-sm shadow-sm">
+                India's No.1 Web Designing Company
               </div>
             </motion.div>
 
@@ -29,63 +51,72 @@ export function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight mb-6"
+              className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-bold leading-[1.1] tracking-tight mb-6 text-ink-900 dark:text-paper-50"
             >
               Complete{" "}
-              <span className="text-brass-500">Branding</span>{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brass-600 to-brass-400 dark:from-brass-400 dark:to-brass-200">
+                Branding
+              </span>
+              <br />
               Solution For Your{" "}
-              <span className="text-cobalt-500">Business</span>
+              <span className="relative whitespace-nowrap">
+                <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-cobalt-600 to-blue-400 dark:from-cobalt-400 dark:to-blue-300">Business</span>
+                <motion.span 
+                  initial={{ width: 0 }}
+                  animate={{ width: "100%" }}
+                  transition={{ delay: 1, duration: 0.8 }}
+                  className="absolute bottom-1 sm:bottom-2 left-0 h-2 sm:h-3 bg-cobalt-500/20 dark:bg-cobalt-500/40 -z-10 rounded-sm" 
+                />
+              </span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg text-ink-700 dark:text-paper-200 max-w-xl mb-8 leading-relaxed"
+              className="text-lg md:text-xl text-ink-700 dark:text-paper-200 max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed"
             >
-              We build precise, high-performing digital presences — websites,
-              apps, SEO strategies, and brand identities — engineered to scale
-              your business across India and 50+ countries worldwide.
+              We build precise, high-performing digital presences — websites, apps, SEO strategies, and brand identities — engineered to scale your business worldwide.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-wrap gap-4"
+              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
             >
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-brass-500 text-ink-900 rounded-xl font-semibold text-base hover:bg-brass-400 transition-all duration-200 hover:shadow-brass-glow"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-brass-500 to-brass-600 text-ink-900 rounded-xl font-bold text-base hover:from-brass-400 hover:to-brass-500 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
               >
                 Get Started
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
                 href="/services"
-                className="inline-flex items-center gap-2 px-8 py-4 border-2 border-current rounded-xl font-semibold text-base hover:text-brass-500 hover:border-brass-500 transition-colors"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-slate-500/20 dark:border-paper-50/20 text-ink-900 dark:text-paper-50 rounded-xl font-semibold text-base hover:border-brass-500 hover:text-brass-600 dark:hover:text-brass-400 hover:bg-brass-500/5 transition-all duration-300"
               >
                 View Services
               </Link>
             </motion.div>
 
-            {/* Stats mini row */}
+            {/* Stats */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-              className="flex items-center gap-8 mt-12 pt-8 border-t border-slate-500/15"
+              transition={{ delay: 0.6, duration: 0.8 }}
+              className="flex items-center justify-center lg:justify-start gap-6 sm:gap-10 mt-12 pt-8 border-t border-slate-500/15"
             >
               {[
                 { value: "7500+", label: "Projects" },
                 { value: "4200+", label: "Clients" },
                 { value: "50+", label: "Countries" },
               ].map((stat) => (
-                <div key={stat.label}>
-                  <div className="font-mono text-2xl font-bold text-brass-500">
+                <div key={stat.label} className="text-center lg:text-left">
+                  <div className="font-display text-2xl sm:text-3xl font-bold text-ink-900 dark:text-paper-50 mb-1">
                     {stat.value}
                   </div>
-                  <div className="text-xs text-ink-600 dark:text-paper-300 font-mono uppercase tracking-wider">
+                  <div className="text-xs sm:text-sm text-ink-500 dark:text-paper-400 font-mono tracking-wider">
                     {stat.label}
                   </div>
                 </div>
@@ -93,125 +124,40 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* Right: Browser Chrome Panel */}
+          {/* Right: Floating Logo Showcase */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, x: 30 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="hidden lg:block"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="relative hidden lg:flex items-center justify-center h-[500px]"
           >
-            <div className="relative">
-              {/* Browser chrome */}
-              <div className="bg-ink-900 rounded-2xl shadow-elevated overflow-hidden border border-slate-500/20">
-                {/* Title bar */}
-                <div className="flex items-center gap-2 px-4 py-3 bg-ink-800 border-b border-slate-500/10">
-                  <div className="flex gap-1.5">
-                    <div className="w-3 h-3 rounded-full bg-error-500/80" />
-                    <div className="w-3 h-3 rounded-full bg-warning-500/80" />
-                    <div className="w-3 h-3 rounded-full bg-success-500/80" />
-                  </div>
-                  <div className="flex-1 mx-4">
-                    <div className="bg-ink-700 rounded-md px-3 py-1 text-xs font-mono text-paper-50/80 text-center">
-                      thewebitshop.com
-                    </div>
-                  </div>
-                </div>
+            {/* Ambient glow behind logo */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-brass-500/10 to-cobalt-500/10 rounded-full blur-[80px]" />
+            
+            {/* Animated rings */}
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+              className="absolute w-[400px] h-[400px] border border-dashed border-brass-500/20 rounded-full"
+            />
+            <motion.div
+              animate={{ rotate: -360 }}
+              transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+              className="absolute w-[500px] h-[500px] border border-slate-500/10 rounded-full"
+            />
 
-                {/* Content area: wireframe draft animation */}
-                <div className="p-6 space-y-4 min-h-[340px]">
-                  {/* Nav wireframe */}
-                  <div className="flex items-center justify-between">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      animate={{ width: 100 }}
-                      transition={{ delay: 0.6, duration: 0.5 }}
-                      className="h-4 bg-brass-500/30 rounded border border-dashed border-brass-500/50"
-                    />
-                    <div className="flex gap-2">
-                      {[1, 2, 3, 4].map((i) => (
-                        <motion.div
-                          key={i}
-                          initial={{ width: 0, opacity: 0 }}
-                          animate={{ width: 40, opacity: 1 }}
-                          transition={{ delay: 0.7 + i * 0.1, duration: 0.3 }}
-                          className="h-3 bg-paper-50/10 rounded"
-                        />
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Hero block */}
-                  <motion.div
-                    initial={{ opacity: 0, scaleX: 0 }}
-                    animate={{ opacity: 1, scaleX: 1 }}
-                    transition={{ delay: 1.1, duration: 0.5 }}
-                    className="origin-left"
-                  >
-                    <div className="h-32 rounded-lg bg-gradient-to-br from-cobalt-500/20 to-brass-500/20 border border-dashed border-cobalt-500/30 flex items-center justify-center">
-                      <div className="space-y-2 text-center">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          animate={{ width: "80%" }}
-                          transition={{ delay: 1.4, duration: 0.4 }}
-                          className="h-4 bg-paper-50/15 rounded mx-auto"
-                        />
-                        <motion.div
-                          initial={{ width: 0 }}
-                          animate={{ width: "60%" }}
-                          transition={{ delay: 1.6, duration: 0.4 }}
-                          className="h-3 bg-paper-50/10 rounded mx-auto"
-                        />
-                        <motion.div
-                          initial={{ scale: 0 }}
-                          animate={{ scale: 1 }}
-                          transition={{ delay: 1.8, duration: 0.3 }}
-                          className="inline-block px-4 py-1.5 bg-brass-500/30 rounded text-[10px] font-mono text-brass-500 border border-brass-500/40 mt-2"
-                        >
-                          CTA BUTTON
-                        </motion.div>
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  {/* Grid blocks */}
-                  <div className="grid grid-cols-3 gap-3">
-                    {[1, 2, 3].map((i) => (
-                      <motion.div
-                        key={i}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 2 + i * 0.15, duration: 0.4 }}
-                        className="h-20 rounded-lg border border-dashed border-paper-50/15 bg-paper-50/5 p-2"
-                      >
-                        <div className="h-2 w-2/3 bg-paper-50/10 rounded mb-1.5" />
-                        <div className="h-1.5 w-full bg-paper-50/5 rounded mb-1" />
-                        <div className="h-1.5 w-4/5 bg-paper-50/5 rounded" />
-                      </motion.div>
-                    ))}
-                  </div>
-
-                  {/* Footer wireframe */}
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 2.6, duration: 0.4 }}
-                    className="h-8 bg-paper-50/5 rounded-lg border border-dashed border-paper-50/10"
-                  />
-                </div>
-              </div>
-
-              {/* Floating accent elements */}
-              <motion.div
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-4 -right-4 w-20 h-20 bg-brass-500/10 rounded-2xl border border-brass-500/20 -z-10"
+            {/* The Logo */}
+            <motion.div
+              animate={{ y: [-15, 15, -15] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="relative z-10 bg-paper-50 dark:bg-ink-900 p-8 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-slate-500/10"
+            >
+              <img
+                src="https://www.thewebitshop.com/header_files/5028TheWebItShop-Logo.png"
+                alt="The Web IT Shop"
+                className="w-full max-w-[320px] h-auto object-contain drop-shadow-md filter dark:brightness-110"
               />
-              <motion.div
-                animate={{ y: [0, 8, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-4 -left-4 w-16 h-16 bg-cobalt-500/10 rounded-2xl border border-cobalt-500/20 -z-10"
-              />
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>

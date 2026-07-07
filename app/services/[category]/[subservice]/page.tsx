@@ -151,12 +151,12 @@ export default async function SubServicePage({
                   </div>
                 </div>
 
-                <div className="rounded-2xl bg-gradient-to-br from-brass-500 to-brass-600 p-6 text-ink-900">
-                  <h3 className="font-display font-semibold text-lg mb-2">Get a Quote</h3>
-                  <p className="text-sm text-ink-900/70 mb-4">Free consultation for {sub.name}.</p>
+                <div className="rounded-2xl bg-gradient-to-br from-brass-500 to-brass-600 p-6 shadow-lg">
+                  <h3 className="font-display font-bold text-xl mb-2 text-black">Get a Quote</h3>
+                  <p className="text-sm font-medium text-black/80 mb-5">Free consultation for {sub.name}.</p>
                   <a
                     href={`tel:${company.primaryPhone}`}
-                    className="block text-center px-4 py-3 bg-ink-900 text-paper-50 rounded-xl font-semibold text-sm"
+                    className="block text-center px-4 py-3 bg-black text-white rounded-xl font-semibold text-sm hover:bg-black/80 transition-colors shadow-md"
                   >
                     <span className="font-mono">{company.primaryPhone}</span>
                   </a>
