@@ -71,7 +71,7 @@ export function Header() {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 shrink-0 group">
               <img
-                src="https://www.thewebitshop.com/header_files/5028TheWebItShop-Logo.png"
+                src="/images/logo.png"
                 alt="The Web IT Shop"
                 className="h-10 lg:h-14 w-auto"
               />

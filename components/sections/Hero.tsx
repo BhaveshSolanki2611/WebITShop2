@@ -153,7 +153,7 @@ export function Hero() {
               className="relative z-10 bg-paper-50 dark:bg-ink-900 p-8 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-slate-500/10"
             >
               <img
-                src="https://www.thewebitshop.com/header_files/5028TheWebItShop-Logo.png"
+                src="/images/logo.png"
                 alt="The Web IT Shop"
                 className="w-full max-w-[320px] h-auto object-contain drop-shadow-md filter dark:brightness-110"
               />
