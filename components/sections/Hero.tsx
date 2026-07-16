@@ -108,8 +108,8 @@ export function Hero() {
               className="flex items-center justify-center lg:justify-start gap-6 sm:gap-10 mt-12 pt-8 border-t border-slate-500/15"
             >
               {[
-                { value: "7500+", label: "Projects" },
-                { value: "4200+", label: "Clients" },
+                { value: "6,530+", label: "Projects" },
+                { value: "6,270+", label: "Clients" },
                 { value: "50+", label: "Countries" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center lg:text-left">

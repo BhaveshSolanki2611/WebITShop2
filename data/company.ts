@@ -52,10 +52,10 @@ export const company: CompanyInfo = {
 };
 
 export const statCounters: StatCounter[] = [
-  { label: "Projects Completed", value: 7500, suffix: "+" },
-  { label: "Active Clients", value: 4200, suffix: "+" },
-  { label: "Team Members", value: 18, suffix: "" },
-  { label: "Happy Clients", value: 7560, suffix: "+" },
+  { label: "Projects Completed", value: 6530, suffix: "+" },
+  { label: "Active Clients", value: 6270, suffix: "+" },
+  { label: "Team Members", value: 38, suffix: "" },
+  { label: "Happy Clients", value: 6500, suffix: "+" },
 ];
 
 export const skillBars: SkillBar[] = [

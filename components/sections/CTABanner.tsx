@@ -21,7 +21,7 @@ export function CTABanner() {
             </div>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-ink-900 text-paper-50 rounded-xl font-semibold hover:bg-ink-800 transition-colors shrink-0"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-black text-white rounded-xl font-bold text-base hover:bg-black/80 transition-colors shrink-0 shadow-lg"
             >
               Contact Us
               <ArrowRight className="w-5 h-5" />
